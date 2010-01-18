@@ -2,8 +2,6 @@
 
 <code>Trac2mite</code> connects your Trac account with your _mite_.account. Track your time easily on issues within Trac and get them automatically send to _mite_.
 
-Projects from Mantis can be bundled with _mite_.projects. Furthermore, you can specify which _mite_.services should be available in Mantis on a per-project basis.
-
 h2. Requirements
 
 * "Trac":http://trac.edgewall.org/wiki/TracDownload >= v0.11
@@ -11,6 +9,8 @@ h2. Requirements
 * a _mite_.account (you can easily signup for a "free 30 days trial account":https://signup.mite.yo.lk/signup/en )
 
 h2. Installation
+
+*Please note:* Currently there's a problem on installing the plugin the "normal way":http://trac.edgewall.org/wiki/TracPlugins#InstallingaTracPlugin. Until this issue is resolved, you have to install the plugin in development mode as described in the steps below.
 
 # Make sure the TracHoursPlugin is installed and enabled.
 # Place all source files of the Trac2mite plugin into the plugin directory of your Trac environment.
@@ -20,7 +20,7 @@ h2. Installation
 
 h2. Setup
 
-*Important note:* Only users with the permission _TICKET_ADD_HOURS_ can use the features of the TracHoursPlugin and Trac2mite. The following steps assume you have this permission.
+*Please note:* Only users with the permission _TICKET_ADD_HOURS_ can use the features of the TracHoursPlugin and Trac2mite. The following steps assume you have this permission.
 
 Go to <code>Preferences > mite</code> and try to connect to your _mite_.account.
 

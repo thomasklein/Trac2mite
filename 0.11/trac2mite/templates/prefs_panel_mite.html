@@ -1,0 +1,104 @@
+<!-- PLEASE NOTE! The actual <form> tag is added by Trac - surrounding this template -->
+<?python from genshi import HTML ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="prefs.html" />
+  <head>
+    <title>configuration</title>
+	<script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".buttons").hide();
+      });
+    </script>
+  </head>
+  <body>
+      	<div id='mite_config'>
+			<h2>Connection to your <em>mite</em>.account</h2>
+	<!-- connection status -->	 
+		<div class="${connection_status_css_class}">
+			
+			<div class="mite_connection_status_msg">
+				<strong>Status:</strong> ${connection_status_text}
+			</div>
+		
+	<!-- account name -->
+			<label>Account name</label>
+			https://
+			<input type='text' 
+				   name='mite_account_name' 
+				   value='${user_settings.mite_account_name}'
+				   id='mite_account_name' />.mite.yo.lk
+						  
+	<!-- API key -->
+			<label>API key</label>
+			 <py:choose>
+		          <py:when test="user_settings.mite_api_key == None">
+					<input type='text' name='mite_api_key'
+					   	   value='${user_settings.mite_api_key}'
+					   	   id='mite_api_key' />
+				  </py:when>
+		          <py:when test="user_settings.mite_api_key != ''">
+		            <input readonly='readonly' class='readonly' type='password' name='mite_api_key'
+						   value='${user_settings.mite_api_key}'
+						   id='mite_api_key' />
+					<a id='mite_link_change_api_key'>Change</a>	
+		          </py:when>
+		        </py:choose>
+			</div><!-- ${connection_status_css_class}-->
+			<div class="formularButtons">
+				<div class="buttonsRight">
+					<input type="submit" value="Check data and synchronize" name="check_account_data" id="check_account_data" />
+				</div>
+				
+				<py:if test="user_settings.mite_api_key != None">
+					<div class="buttonsLeft">
+						<input id="disconnect_account_data" name="disconnect_account_data" type="submit" value="Disconnect mite.account" />
+					</div><!-- buttonsLeft-->
+				</py:if>
+				
+				<div class="mite_notifier">.</div>
+				<div style="clear:both"></div>
+			</div><!-- formularButtons-->
+			
+		<!-- Preferences and interconnections -->	
+			<py:if test="user_settings.mite_api_key != None">
+			
+				<div id="mite_user_bindings">
+					<h2>Preferences</h2>
+					<h3>Interconnections</h3>
+					<p class="bindings_help">Selected <em>mite</em>.projects / <em>mite</em>.services will be shown in the selection lists for a new time entry. You can choose multiple projects / services by clicking with a pressed control key (Windows) or command key (Mac) on several entries in the lists.</p>
+					<label><em>mite</em>.projects</label>
+					${HTML(mite_user_resources_f['p'])}
+					
+					<label><em>mite</em>.services</label>
+					${HTML(mite_user_resources_f['s'])}
+					
+					<label>Additional information sent with a comment</label>
+					<p class="bindings_help">You can define additional information sent with each time entry within the comments. For dynamic information you can use the following placeholders:<br/><code>{comment}, {component}, {milestone}, {owner}, {reporter}, {ticket_id}, {ticket_summary}, {ticket_status}, {ticket_type}</code>.<br/>If you do not use <code>{comment}</code> (contains the Trac comment), this text will be appended to the Trac comment.</p>				
+					<input id="preferences_note_pattern"
+						   name='preferences_note_pattern'
+						   type="text"
+						   class="note_pattern"
+						   value="${user_settings.note_pattern}" />
+					
+					<div class="formularButtons">
+						<div class="buttonsRight">
+							<input type="submit" value="Save preferences" id="save_preferences" name="save_preferences" />
+						</div>
+						<div class="buttonsLeft">
+							<input type="reset" value="Reset" />
+						</div><!-- buttonsLeft-->
+						<div class="mite_notifier">.</div>
+						<div style="clear:both"></div>
+					</div><!-- formularButtons-->
+				</div><!-- plugin_mite_user_bindings-->
+			
+			</py:if>
+	</div><!-- plugin_mite_config -->
+	<input id='mite_button_pressed' name='mite_button_pressed' type='hidden' value='' />
+  </body>
+</html>

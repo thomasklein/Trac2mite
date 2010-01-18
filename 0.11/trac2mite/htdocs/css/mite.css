@@ -1,0 +1,187 @@
+/* @group Plugin config */
+
+#mite_config {
+	width:500px;
+	margin: 1em 0;
+	border: 1px solid #aaa;
+	padding: 0.5em;
+	background:#F6F6F6;
+}
+
+#mite_config h2 {
+	font-size: 12pt;
+	background: #62c1cd;
+	color: white;
+	padding: 0.25em;
+	margin: 0;
+}
+
+#mite_config .config_fields {
+	padding: 0.25em;
+}
+
+#mite_config p.bindings_help {
+	
+	color: #888888;
+	font-size: 90%;
+	line-height: 150%;
+	margin: 0 0 0.5em 0;
+}
+
+#mite_config hr {
+	border: 0;
+	border-top: 1px solid #aaa;
+	padding-bottom: 0.5em;
+}
+
+#mite_config label {
+	display: block;
+	font-weight: bold;
+	margin: 0.7em 0 0.25em 0;
+}
+
+
+#mite_config fieldset {
+	border: 1px solid #aaa;
+	margin-top: 2em;
+}
+	
+#mite_config	fieldset legend {
+	font-style: italic;
+}
+		
+#mite_config	input.readonly {
+	color: #666;
+}
+
+
+#mite_config span.linkChangeValue {
+	float: right;
+	margin-right: 12em;
+}
+
+#mite_config a,#mite_config a:visited {
+	color: #5e7edb;
+}
+
+#mite_config .readonly {
+	color: #666;
+}
+
+div.mite_connection_active {
+	background: url(../images/mite-logo-active.png) no-repeat right bottom;
+}
+
+div.mite_connection_inactive {
+	background: url(../images/mite-logo-inactive.png) no-repeat right bottom;
+}
+
+div.mite_connection_status_msg {
+	padding: .3em;
+	margin: 0.5em 0;
+	font-size: 80%;
+}
+
+div.mite_connection_active div.mite_connection_status_msg {
+	border: 1px solid #C6D880;
+	background: #E6EFC2;
+	color: #529214;
+}
+
+div.mite_connection_inactive div.mite_connection_status_msg {
+	background: #FBE3E4;
+	color: #D12F19;
+	border: 1px solid #FBC2C4;
+}
+
+div.mite_connection_status_msg small {
+	font-size: 90%;
+}
+
+
+#mite_config .formularButtons {
+	margin: 1.5em 0 0.5em 0;
+	padding: 0;
+}
+
+#mite_config .formularButtons .buttonsLeft {
+	float: left;
+	padding: 0;
+
+}
+
+#mite_config .formularButtons .buttonsRight {
+	float: right;
+	padding: 0;
+
+}
+
+#mite_config .formularButtons .clearBoth {
+	clear: both;
+}
+
+#mite_config .readonly {
+	color: #666666;
+}
+
+
+#mite_user_bindings .note_pattern {
+	width: 95%;
+}
+
+#mite_account_name {
+	width: 135px;
+}
+
+#mite_api_key {
+	width: 255px;
+}
+
+.mite_notifier {
+	background: url(../images/indicator.gif) no-repeat left center;
+	margin: 0 auto;
+	padding-left: 12px;
+	width: 12px;
+	color: transparent;
+	display: none;
+}
+
+#mite_link_change_api_key {
+	padding: 0.25em;
+	text-decoration: none;
+}
+
+#mite_link_change_api_key:hover {
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	text-shadow: 0 1px 1px #E6D0C9;
+	background-color: #5e7edb;
+	color: white !important;
+	cursor: pointer;
+}
+
+/* @end */
+
+/* @group no javascript */
+
+.mite_text_if_no_javascript {
+	background: #FBE3E4;
+	color: #D12F19;
+	border: 1px solid #FBC2C4;
+	padding: 0.3em;
+	font-weight: normal;
+	font-size: 90%;
+	width: 200px;
+	margin: 1em auto;
+	
+}
+
+.mite_hide_if_no_javascript {
+	display: none;
+}
+
+
+/* @end */
+
+
+
