@@ -35,6 +35,8 @@ class Mite(object):
 		returns new id of the time entry
 		"""
 		
+		note = ''
+		
 		data = """
 		<time-entry>
 		   <date-at>%s</date-at>
@@ -142,10 +144,10 @@ class Mite(object):
 		response = None
 		try:
 			api_response = urllib2.urlopen(req)
-			response_status = int(api_response.info().dict['status'])
+			response_status = api_response.info().dict['status']
 			
 			# special case, because no xml is returned
-			if ((method=="PUT" or method=="DELETE") and response_status==200):
+			if ((method=="PUT" or method=="DELETE") and response_status=="200 OK"):
 				return True
 			# create xml object for mite.api response
 			else:

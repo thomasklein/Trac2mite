@@ -1,2 +1,5 @@
+-- Version 0.1.1 [15th March 2010]
+* FIXED adapted plugin to new http status codes from the mite.api
+
 -- Version 0.1 [18th January 2010]
 * repository initialized
