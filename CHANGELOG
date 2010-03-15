@@ -1,3 +1,6 @@
+-- Version 0.1.2 [15th March 2010]
+* BUGFIX notes with replaced placeholders will be sent again to mite
+
 -- Version 0.1.1 [15th March 2010]
 * FIXED adapted plugin to new http status codes from the mite.api
 

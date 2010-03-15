@@ -35,8 +35,6 @@ class Mite(object):
 		returns new id of the time entry
 		"""
 		
-		note = ''
-		
 		data = """
 		<time-entry>
 		   <date-at>%s</date-at>
@@ -44,17 +42,16 @@ class Mite(object):
 		   <project-id>%s</project-id>
 		   <service-id>%s</service-id>
 		   <note>%s</note>
-		</time-entry>""" % (date, minutes, project_id or '', service_id or '', note.encode('utf-8'))
+		</time-entry>""" % (date, minutes, project_id or '', service_id or '', note)
 		
-		response = self.do_request("time_entries.xml","POST",data)
-
+		response = self.do_request("time_entries.xml","POST",data.encode('utf-8'))
+		
 		if not response:
 			print "\nError in Trac2mite when trying to add a new time entry: '%s'" % self.lastError
 			return None
 		
 		print "\nNew mite time entry (ID: %s) created!\n" % response.find("id").text
 		return response.find("id").text
-		
 
 	def update_time_entry(self, time_entry_id, minutes=None, project_id=None, service_id=None, note=''):
 		"""

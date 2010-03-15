@@ -218,6 +218,10 @@ class Track2MitePreferencePanelProvider(Component):
 		"""
 		bindings_int = [] # contains each value of bindings converted to int 
 		
+		# reinit the preference instance if it got lost
+		if not self.prefs.account_name:
+			self.prefs = Trac2MiteUserPrefs()
+		
 		# get all selected bindings and save those in the database
 		for rsrc_type in self.prefs.rsrc_types:
 			
