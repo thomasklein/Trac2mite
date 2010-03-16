@@ -10,9 +10,12 @@ h2. Requirements
 
 h2. Installation
 
-*Please note:* Currently there's a problem when installing the plugin the "normal way":http://trac.edgewall.org/wiki/TracPlugins#InstallingaTracPlugin. Until this issue is resolved you have to install the plugin in development mode as described in the steps below.
+Before continuing please make sure the TracHoursPlugin is installed and enabled.
 
-# Make sure the TracHoursPlugin is installed and enabled.
+To install <code>Trac2mite</code> please follow the instructions provided in the official "Trac Wiki":http://trac.edgewall.org/wiki/TracPlugins#InstallingaTracPlugin.
+
+In case you encounter any problems you can still try to install the plugin in development mode as described in the following below.
+
 # Place all source files of the Trac2mite plugin into the plugin directory of your Trac environment.
 # Change to <code>/path/to/your/projenv/plugins/Trac2mite/0.11</code> via console and run the command <code>python setup.py develop -md /path/to/your/projenv/plugins</code>
 # Login as a user with admin privileges and go to <code>Admin > Plugins</code> to enable all components for 'trac2mite', which should now be listed as a available plugin. 
